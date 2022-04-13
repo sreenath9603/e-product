@@ -1,0 +1,9 @@
+mat-card.mat-card {
+  min-height: 550px;
+  img.mat-card-image {
+    height: 200px;
+    width: -webkit-fill-available;
+    padding: 10px;
+    margin: 0;
+  }
+}

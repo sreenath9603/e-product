@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with back icon" routerLink="/home">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+  <span>Go back</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 text-center" *ngFor="let details of categoryDetails">
+      <mat-card class="example-card" (click)="onDetailsClick(details.id,details?.category)">
+        <mat-card-header>
+          <mat-card-title>{{details?.title}}</mat-card-title>
+          <mat-card-subtitle>
+            <p>Price :- {{details?.price }} INR/-</p>
+            <p>Rating(rate/count) :- {{details?.rating.rate}}/{{details?.rating.count}} </p>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="details?.image" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{details?.description}}
+          </p>
+          <p>
+            Category :- {{details?.category}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with back icon" routerLink="/home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Home</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <mat-form-field class="w-100 mt-3 mb-3" appearance="outline">
+        <input matInput placeholder="label" [formControl]="cartFormControl">
+      </mat-form-field>
+    </div>
+    <div class="col-12 " *ngFor="let details of filterCartData(cartData)">
+      <mat-card class="example-card" (click)="onDetailsClick(details.id,details?.category)">
+        <mat-card-title>{{details?.title}}</mat-card-title>
+        <mat-card-subtitle>
+          <p>Price :- {{details?.price }} INR/-</p>
+          <p>Rating(rate/count) :- {{details?.rating.rate}}/{{details?.rating.count}} </p>
+        </mat-card-subtitle>
+      </mat-card>
+    </div>
+  </div>
+</div>
